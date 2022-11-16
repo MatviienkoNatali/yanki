@@ -25,7 +25,7 @@ const SwiperCategory = () =>{
             link: '',
         },
         {
-            name: 'Шубы',
+            name: 'Шуби',
             img: furCoats,
             link: '',
         },
@@ -38,7 +38,7 @@ const SwiperCategory = () =>{
     return(
         <section className={styles.categories}>
             <div className="container">
-                <h2>Категории</h2>
+                <h2>Категорії</h2>
                 <Swiper
                     modules={[Navigation, A11y]}
                     spaceBetween={15}

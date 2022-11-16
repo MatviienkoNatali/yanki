@@ -30,11 +30,22 @@
   }
 }
 .wrap{
-
+  text-align: center;
 }
 .button{
   text-transform: uppercase;
-  display: block;
-  text-align: center;
-  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  min-width: 170px;
+  &:hover{
+    svg{
+      right: -30px;
+    }
+  }
+  svg{
+    position: absolute;
+    right: -20px;
+    top: 3px;
+    transition: .3s;
+  }
 }
