@@ -1,0 +1,40 @@
+@import "src/var";
+.hero{
+  background-image: url("../../../images/home-hero.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: $secondFontColor;
+  h1{
+    font-size: 32px;
+    position: relative;
+    margin-bottom: 40px;
+    @include lg{
+      font-size: 46px;
+    }
+    &:after{
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      position: absolute;
+      content: "";
+      width: 120px;
+      height: 1px;
+      background-color: $white;
+      bottom: -20px;
+    }
+  }
+}
+.wrap{
+
+}
+.button{
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}

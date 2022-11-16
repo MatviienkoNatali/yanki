@@ -1,0 +1,55 @@
+
+$xs: 375px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1440px;
+
+// colors
+$accentColor: #E0BEA2;
+$secondColor: #252525;
+$mainBg: rgb(255, 255, 255);
+$white: #fff;
+
+
+$mainFont: 'Raleway', sans-serif;
+$fontColor: $secondColor;
+$secondFontColor: #fff;
+
+
+@mixin xs {
+  @media (min-width: $xs) {
+    @content
+  }
+}
+
+@mixin sm {
+  @media (min-width: $sm) {
+    @content
+  }
+}
+
+@mixin md {
+  @media (min-width: $md) {
+    @content
+  }
+}
+
+@mixin lg {
+  @media (min-width: $lg) {
+    @content
+  }
+}
+
+@mixin xl {
+  @media (min-width: $xl) {
+    @content
+  }
+}
+
+@mixin xxl {
+  @media (min-width: $xxl) {
+    @content
+  }
+}

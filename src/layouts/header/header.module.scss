@@ -1,0 +1,216 @@
+@import "src/var";
+.header{
+  transition: .4s;
+  min-height: 85px;
+  position: absolute;
+  width: 100%;
+  padding-top: 24px;
+  text-transform: uppercase;
+  color: $secondFontColor;
+  &.open{
+    box-shadow: 0 10px 15px rgba(37, 37, 37, 0.07);
+    background-color: $mainBg;
+    color: $fontColor;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    @include lg{
+      position: absolute;
+      height: auto;
+      background-color: $mainBg;
+      color: $secondFontColor;
+    }
+    .nav{
+      display: block;
+      @include lg{
+        display: flex;
+      }
+    }
+    .icons{
+
+      path{
+        fill: $accentColor;
+        @include lg{
+          fill: $white;
+        }
+      }
+      li{
+        &:first-child{
+          display: block;
+        }
+      }
+    }
+    .secondNav{
+      color: $fontColor;
+    }
+    .currency{
+      display: inline-block;
+    }
+  }
+  :global{
+    .container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      @include lg{
+        flex-wrap: nowrap;
+      }
+    }
+  }
+}
+.btnBurger{
+  height: 35px;
+  width: 50px;
+  position: relative;
+  z-index: 2;
+  span{
+    transition: .4s;
+    display: block;
+    height: 4px;
+    background-color: $white;
+    width: 34px;
+    margin-bottom: 6px;
+    &:nth-child(2){
+      width: 26px;
+    }
+    &:last-child{
+      margin-bottom: 0;
+      width: 18px;
+    }
+  }
+  &.open{
+    span {
+      width: 34px !important;
+      margin-bottom: 0;
+      background-color: $accentColor;
+      &:first-child {
+        transform: rotate(-45deg);
+      }
+
+      &:nth-child(2), &:last-child {
+        margin-top: -4px;
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        opacity: 0;
+      }
+    }
+  }
+}
+.logo{
+  order: 2;
+  width: calc(100% - 230px);
+  text-align: center;
+  padding: 0 20px;
+  @include lg{
+    width: auto;
+    order: 0;
+  }
+}
+.nav{
+  display: none;
+  order: 4;
+  text-align: center;
+  width: 100%;
+  margin-top: 85px;
+  @include lg{
+    margin: 0;
+    width: auto;
+    text-align: left;
+    order: 0;
+    display: flex;
+  }
+  li{
+    margin: 0 10px;
+    padding: 20px 0;
+    border-top: 0.3px solid $secondColor;
+    &:last-child{
+      border-bottom: 0.3px solid $secondColor;
+    }
+    @include lg{
+      margin: 0 15px;
+      border: 0;
+      &:last-child{
+        border-bottom: 0;
+      }
+    }
+  }
+}
+.secondNav{
+  transition: .4s;
+  order: 5;
+  margin-top: 0;
+  @include lg{
+    order: 0;
+    display: none;
+    position: absolute;
+    left: 150px;
+    width: 100%;
+    padding: 20px;
+  }
+  li{
+    &:first-child{
+      border-top: 0;
+    }
+  }
+}
+.icons{
+  display: flex;
+  order: 3;
+  @include lg{
+    order: 0;
+  }
+  li{
+    margin: 0 10px;
+    @include lg{
+      margin: 0 15px;
+    }
+    &:first-child{
+      margin-left: 0;
+      position: absolute;
+      top: 80px;
+      left: calc(100% - 120px);
+      display: none;
+      @include lg{
+        display: inline-block;
+        position: static;
+      }
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  svg{
+    width: 20px;
+    @include lg{
+      width: 25px;
+    }
+  }
+}
+.wrapDropDown{
+  order: 1;
+  width: 60px;
+  @include lg{
+    width: auto;
+    order: 0;
+  }
+}
+.dropDown{
+
+}
+.language{
+
+}
+.currency{
+  position: absolute;
+  right: 20px;
+  top: 85px;
+  display: none;
+  @include lg{
+    position: static;
+    display: inline-block;
+  }
+}

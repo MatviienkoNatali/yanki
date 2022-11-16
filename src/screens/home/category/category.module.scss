@@ -1,0 +1,80 @@
+@import "src/var";
+
+.categories{
+  padding: 60px 0;
+  @include lg{
+    padding: 100px 0;
+  }
+  h2{
+    font-size: 24px;
+    margin-bottom: 30px;
+    @include lg{
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+  }
+  :global{
+    .swiper-wrapper{
+      display: flex;
+      color: $white;
+    }
+    .swiper-button-next{
+      @include md{
+        right: 20px;
+      }
+    }
+    .swiper-button-prev{
+      @include md{
+        left: 20px;
+      }
+    }
+    .swiper-button-next, .swiper-button-prev{
+      &:after{
+        color: $white;
+        font-size: 18px;
+        background: $accentColor;
+        padding: 9px 11px;
+        @include md{
+          font-size: 24px;
+          padding: 9px 13px;
+        }
+      }
+    }
+  }
+}
+.slider{
+  position: relative;
+  &:hover{
+    h3{
+      height: 100%;
+    }
+  }
+  h3{
+    transition: 0.5s;
+    font-size: 18px;
+    text-align: center;
+    padding: 8px;
+
+    background: rgba($accentColor, 0.75);
+    backdrop-filter: blur(3px);
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include lg{
+      font-size: 20px;
+    }
+  }
+  picture{
+    max-height: 450px;
+    overflow: hidden;
+    img{
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
