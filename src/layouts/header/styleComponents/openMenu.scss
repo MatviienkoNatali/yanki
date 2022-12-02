@@ -1,0 +1,49 @@
+.header.open{
+  box-shadow: 0 10px 15px rgba(37, 37, 37, 0.07);
+  background-color: $mainBg;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  @include lg{
+    height: auto;
+    background-color: $mainBg;
+    color: $secondFontColor;
+  }
+  .btnBurger{
+    span{
+      background-color: $accentColor;
+    }
+  }
+  .nav{
+    display: block;
+    @include lg{
+      display: flex;
+    }
+  }
+  .icons{
+    path{
+      fill: $accentColor;
+      @include lg{
+        fill: $white;
+      }
+    }
+    li{
+      &:first-child{
+        display: block;
+      }
+    }
+  }
+  .secondNav{
+    color: $fontColor;
+  }
+  .currency{
+    display: inline-block;
+  }
+  .wrapDropDown select{
+    color: $secondColor;
+    @include lg{
+      color: white;
+    }
+  }
+}

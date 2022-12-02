@@ -1,13 +1,15 @@
 import styles from "./header.module.scss"
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import logoWhite from "../../images/logo-yanki-white.svg"
 import logo from "../../images/logo-yanki.svg"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 export const Header = () => {
-
     const dataHeader = window.dataHeader;
+    const path = useLocation();
+
+    const[pathHome, setPathHome] = useState(false);
     const[openBurger, setOpenBurger] = useState(false);
     const clickBurger = () =>{
         if(!openBurger){
@@ -17,9 +19,15 @@ export const Header = () => {
             setOpenBurger(false);
         }
     }
+    useEffect(() =>{
+        if(path.pathname === '/'){
+            setPathHome(true)
+        }
+    },[path])
+
 
     return(
-        <header className={`${styles.header} ${openBurger ? styles.open : ''}`}>
+        <header className={`${styles.header} ${openBurger ? styles.open : ''} ${pathHome ? styles.pathHome : '' }`}>
             <div className="container">
                 <button onClick={clickBurger} className={`${styles.btnBurger} ${openBurger ? styles.open : ''}`}>
                     <span></span>
@@ -40,13 +48,25 @@ export const Header = () => {
                         })
                     }
                 </ul>
-                <Link className={styles.logo}>
-                    <img src={`${openBurger ? logo : logoWhite}`} alt="logo"/>
+                <Link className={styles.logo} to={'/'}>
+                    <img src={`${openBurger || !pathHome ? logo : logoWhite}`} alt="logo"/>
                 </Link>
 
                 <div className={styles.wrapDropDown}>
-                    <button className={`arrow-down ${styles.language}`}>UA</button>
-                    <button className={`arrow-down ${styles.currency}`}>UAH</button>
+                        { dataHeader.language &&
+                            <select name={'language'} id={'language'} className={`arrow-down ${styles.language}`}>
+                                { dataHeader.language?.map((item, key)=>{
+                                    return <option key={key} value={item.name}>{item.name}</option>
+                                })}
+                            </select>
+                        }
+                        { dataHeader.currency &&
+                            <select name={'currency'} id={'currency'} className={`arrow-down ${styles.currency}`}>
+                                { dataHeader.currency?.map((item, key)=>{
+                                    return <option key={key} value={item.name}>{item.name}</option>
+                                })}
+                            </select>
+                        }
                 </div>
 
                 <ul className={styles.icons}>

@@ -1,0 +1,28 @@
+.header.pathHome{
+  min-height: 85px;
+  position: absolute;
+  width: 100%;
+  color: $secondFontColor !important;
+  background-color: transparent;
+  .btnBurger{
+    span{
+      background-color: white;
+    }
+  }
+  .icons{
+    path{
+      fill: $accentColor;
+      @include lg{
+        fill: $white;
+      }
+    }
+    li{
+      &:first-child{
+        display: block;
+      }
+    }
+  }
+  .wrapDropDown select{
+    color: $secondFontColor;
+  }
+}

@@ -23,7 +23,7 @@ export const Footer = () => {
                     {
                         arrNav?.map((e, id) => {
                             return <div key={id} className={`${styles.wrapNav}`}>
-                                {e.title ? <h3>{e?.title}</h3> : null}
+                                {e.title ? <h3 onClick={clickOpenNav}>{e?.title}</h3> : null}
                                 {e.icons ? <ul className={styles.icons}>
                                         {
                                             e.icons?.map((svg, number)=>{
@@ -33,7 +33,7 @@ export const Footer = () => {
                                             })
                                         }
                                         </ul> : null}
-                                <ul key={id} className={`${styles.nav}`}>
+                                <ul key={id} className={`${styles.nav} ${openNav? styles.open : ''}`}>
                                     {
                                         e.nav?.map((i, index) => {
                                             return <li key={index}><Link to={i?.link}>{i?.name}</Link></li>
@@ -44,7 +44,7 @@ export const Footer = () => {
                         })
                     }
                 </div>
-                <p className={styles.copyright}>&#169;️ {new Date().getFullYear()} Yanki. All rights reserved</p>
+                <p className={styles.copyright}>&#169;️ {new Date().getFullYear()} {dataFooter.copyright}</p>
             </div>
         </footer>
     )

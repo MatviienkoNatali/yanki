@@ -1,3 +1,8 @@
 window.dataHome = {
-    title: 'main title',
+    title: 'Нова колекція',
+    button:{
+        name: 'ДИВИТИСЬ НОВИНКИ',
+        link: '/',
+    }
+
 }

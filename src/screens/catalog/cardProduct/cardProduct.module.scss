@@ -1,0 +1,58 @@
+@import "src/var";
+
+.cardProduct{
+  width: calc(33% - 8px);
+  text-align: center;
+  position: relative;
+  :global{
+    h3{
+      position: relative;
+      margin-bottom: 5px;
+      &.new::after{
+        position: absolute;
+        padding-left: 20px;
+        color: $accentColor;
+        content: 'new';
+      }
+    }
+  }
+}
+.picture{
+  max-height: 360px;
+  overflow: hidden;
+  display: block;
+  margin-bottom: 15px;
+  img{
+    width: 100%;
+  }
+}
+.sale{
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  color: darkred;
+  span{
+    display: block;
+    font-size: 1.2rem;
+  }
+}
+.prise{
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.priseSale{
+  span{
+    &:first-child{
+      text-decoration: line-through;
+      color:  rgba($fontColor, .5);
+      padding-right: 15px;
+    }
+  }
+}
+.size{
+  text-transform: uppercase;
+  color:  rgba($fontColor, .5);
+  span{
+    margin: 0 3px;
+  }
+}

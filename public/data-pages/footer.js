@@ -1,4 +1,5 @@
 window.dataFooter = {
+    copyright: 'Yanki. All rights reserved',
     navCompany: {
         title: "КОМПАНіЯ",
         nav:[

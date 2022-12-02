@@ -1,0 +1,47 @@
+.nav{
+  display: none;
+  order: 4;
+  text-align: center;
+  width: 100%;
+  margin-top: 85px;
+  @include lg{
+    margin: 0;
+    width: auto;
+    text-align: left;
+    order: 0;
+    display: flex;
+  }
+  li{
+    margin: 0 10px;
+    padding: 20px 0;
+    border-top: 0.3px solid $secondColor;
+    &:last-child{
+      border-bottom: 0.3px solid $secondColor;
+    }
+    @include lg{
+      margin: 0 15px;
+      border: 0;
+      &:last-child{
+        border-bottom: 0;
+      }
+    }
+  }
+}
+.secondNav{
+  transition: .4s;
+  order: 5;
+  margin-top: 0;
+  @include lg{
+    order: 0;
+    display: none;
+    position: absolute;
+    left: 150px;
+    width: 100%;
+    padding: 20px;
+  }
+  li{
+    &:first-child{
+      border-top: 0;
+    }
+  }
+}
